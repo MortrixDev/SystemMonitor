@@ -1,10 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<SystemMonitor>();
+builder.Services.AddSingleton<SystemMonitor.SystemMonitor>();
 
 var app = builder.Build();
 
-// Map a simple endpoint to trigger the monitor logic
-app.MapGet("/stats", (SystemMonitor monitor) => monitor.GetSystemStats());
+app.MapGet("/stats", async (SystemMonitor.SystemMonitor monitor)  => {
+	var stats = await monitor.GetSystemStats();
+    return Results.Ok(stats);
+});
 
 app.Run();
