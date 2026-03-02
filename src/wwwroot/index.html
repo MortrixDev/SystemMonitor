@@ -17,7 +17,7 @@
     async function fetchStats() {
       try {
         const res = await fetch('http://localhost:5000/stats');
-        const data = await response.json();
+        const data = await res.json();
 
         document.getElementById('cpu').innerText = data.cpuUsagePercentage;
         document.getElementById('mem').innerText =
