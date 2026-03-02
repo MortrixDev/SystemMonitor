@@ -1,0 +1,28 @@
+#------------------------------------------------------------------
+# .NET / C# Core Files
+#------------------------------------------------------------------
+# Build artifacts
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rp/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+.vs/
+.vscode/
+*.user
+*.userossc
+*.sln.docstates
+
+*.db
+*.sqlite
+*.sdf
+
+.DS_Store
+Thumbs.db
