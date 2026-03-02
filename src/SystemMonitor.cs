@@ -40,7 +40,7 @@ public class SystemMonitor {
 		double? batteryPercentage = await GetBatteryPercentage();
 
 		return new SystemStats(
-	        SystemTime: cpuTicks[2],
+	        SystemTime: DateTime.Now,
 	        BatteryPercentage: batteryPercentage,
 	        CpuUsagePercentage: Math.Round(cpuUsage, 2),
 	        MemoryUsageMb: Math.Round(usedMemoryKb / 1024.0, 2),

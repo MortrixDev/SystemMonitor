@@ -19,12 +19,10 @@
         const res = await fetch('http://localhost:5000/stats');
         const data = await res.json();
 
+        document.getElementById('time').innerText = new Date(data.currentTime).toLocaleTimeString();
         document.getElementById('cpu').innerText = data.cpuUsagePercentage;
-        document.getElementById('mem').innerText =
-          `${data.memoryUsageMb} / ${data.memoryMaxMb}`;
-
-        document.getElementById('batt').innerText =
-          data.batteryPercentage !== null ? `${data.batteryPercentage}%` : "N/A";
+        document.getElementById('mem').innerText = `${data.memoryUsageMb} / ${data.memoryMaxMb}`;
+        document.getElementById('batt').innerText = data.batteryPercentage !== null ? `${data.batteryPercentage}%` : "N/A";
 
       } catch (error) {
         console.error('Error fetching stats:', error);

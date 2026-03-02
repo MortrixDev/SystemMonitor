@@ -1,7 +1,7 @@
 namespace SystemMonitor;
 
 public record SystemStats(
-    long SystemTime,
+    DateTime SystemTime,
 	double? BatteryPercentage,
 	double CpuUsagePercentage,
 	double MemoryUsageMb,
